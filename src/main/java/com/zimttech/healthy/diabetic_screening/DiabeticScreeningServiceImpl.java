@@ -5,6 +5,7 @@ import com.zimttech.healthy.model.DiabeticScreening;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,5 +38,11 @@ public class DiabeticScreeningServiceImpl implements DiabeticScreeningService {
     public double calculateBmiValue(double weight, double height) {
         double heightInMeters = height / 100.0; // Convert height from cm to meters
         return weight / (heightInMeters * heightInMeters);
+    }
+
+    @Override
+    public List<DiabeticScreening> findByBmiStatusAndScreeningDate(BmiStatus bmiStatus, LocalDateTime localDateTime) {
+
+       return  null;
     }
 }
