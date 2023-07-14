@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "patients")
 @Entity
 @Data
+@Table(name = "patients")
+
+
 public class Patient extends  BaseEntity {
 
     @Column(name = "first_name", nullable = false)
