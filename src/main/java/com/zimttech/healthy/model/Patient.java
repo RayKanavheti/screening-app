@@ -1,19 +1,18 @@
 package com.zimttech.healthy.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+
+import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Data
 @Table(name = "patients")
-
 
 public class Patient extends  BaseEntity {
 
@@ -27,4 +26,12 @@ public class Patient extends  BaseEntity {
     private Long age;
     @Column(name = "gender", nullable = false)
     private Gender gender;
+
+    @Column(name = "diagnosis_date", nullable = false, updatable = false)
+    private LocalDateTime diagnosisDate;
+
+    @Column(name = "treatment_notes", nullable = false)
+    private String treatmentNotes;
+
+
 }
