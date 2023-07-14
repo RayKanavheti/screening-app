@@ -26,12 +26,20 @@ public class DiabeticScreening extends  BaseEntity{
     private double weight; // Unit: kg
     @Column(name = "height", nullable = false)
     private double height; // Unit: cm
+
+    @Column( name = "bmi")
+    private double bmi;
+
+    @Column(name = "bmi_status")
+    private BmiStatus bmiStatus;
     @Column(nullable = false, name = "blood_pressure_systolic")
     private double bloodPressureSystolic; // Unit: mmHg
 
     @Column(nullable = false, name = "blood_pressure_diastolic")
     private double bloodPressureDiastolic; // Unit: mmHg
 
+    @Column(name = "bmi_status")
+    private BPStatus bpStatus;
     @Column(nullable = false, name = "blood_glucose_level")
     private double bloodGlucoseLevel; // Unit: mg/dL
     @ManyToOne(fetch = FetchType.EAGER, optional = false)

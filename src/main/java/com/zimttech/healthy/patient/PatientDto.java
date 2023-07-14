@@ -20,7 +20,7 @@ public class PatientDto {
     @NotBlank
     private Gender gender;
     @NotBlank
-    private LocalDateTime diagnosisDate;
+    private String diagnosisDate;
     @NotBlank
     private String treatmentNotes;
 }

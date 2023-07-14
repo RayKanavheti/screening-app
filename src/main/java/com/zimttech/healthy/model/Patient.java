@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,11 +28,14 @@ public class Patient extends  BaseEntity {
     @Column(name = "gender", nullable = false)
     private Gender gender;
 
-    @Column(name = "diagnosis_date", nullable = false, updatable = false)
+    @Column(name = "diagnosis_date", nullable = false)
     private LocalDateTime diagnosisDate;
 
     @Column(name = "treatment_notes", nullable = false)
     private String treatmentNotes;
+
+    @OneToMany(mappedBy = "patient")
+    private List<DiabeticScreening> diabeticScreenings;
 
 
 }
